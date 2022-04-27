@@ -1,0 +1,273 @@
+/*всички елементи в страницата ще бъдат с padding: 0; и margin: 0;*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-family: 'Arial', 'Helvetica', sans-serif;
+}
+img{
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+}
+/*всички а тагова ще се с курсор ръчичка*/
+a{
+    cursor: pointer;
+}
+/*header*/
+.slider h1{
+    position: absolute;
+    text-align: center;
+    color: #fff;
+    width: 100%;
+    padding: 10px 0px;
+    font-size: 40px;
+    text-shadow: 2px 2px 35px #000000;
+}
+/*image container*/
+.image-wrapper{
+    display: block;
+    width: 100%;
+    height: 100vh;
+}
+    .image-wrapper img{
+        width: 100%;
+        height: 100vh;
+    }
+/*header text*/
+.header-info{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .6);
+    color: #fff;
+    padding: 20px 100px;
+    border-top: 0.5px solid #fff;
+    border-bottom: 0.5px solid #fff;
+    text-align: justify;
+}
+    /*позициониране в ляво и дясно на двата текста*/
+    .column-one{
+        float: left;
+        width: 45%;
+        font-size: 25px;
+    }
+    .column-two{
+        float: right;
+        width: 45%;
+        font-size: 25px;
+    }
+/*parallax*/
+/*задаваме background-attachment: fixed; за да може контейнера със снимка за фон да не се скролва надолу, а само съдържанието вътре в него*/
+.parallax{
+    background-image: url(../images/4.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-position: center;
+    background-size: cover;
+    border-bottom: 3px solid #fff;
+}
+    /*articles in parallax*/
+    .parallax article{
+        width: 50%;
+        padding: 64px 117px;
+        background-color: rgba(255, 255, 255, .9);
+        text-align: center;
+        /*shadow from shadow generator https://www.cssmatic.com/box-shadow */
+        -webkit-box-shadow: -1px -2px 42px -2px rgba(255,255,255,1);
+        -moz-box-shadow: -1px -2px 42px -2px rgba(255,255,255,1);
+        box-shadow: -1px -2px 42px -2px rgba(0,0,0,1);
+    }
+    .parallax article.second-article{
+        margin-left: 50%;
+    }
+        .parallax article p{
+            color: #4e4e4e;
+            font-size: 20px;
+            margin: auto;
+            max-width: 70%;
+            font-weight: 500;
+            line-height: 1.5;
+        }
+    /*buttons*/
+    .parallax-buttons{
+        width: 45%;
+        margin: 40px auto 0;
+        font-size: 15px;
+        color: #fff;
+        border: 0px;
+    }   
+        .parallax-buttons a{
+            display: block;
+            padding: 10px 40px;
+            color: #fff;
+            text-decoration: none;
+            background-color: #e2b55d;
+        }
+        /*hover efect*/
+        .parallax-buttons a:hover{
+            background-color: #a48343;
+        }
+    
+    /*second section with table*/
+    .second-section{
+        position: relative;
+        height: auto;
+        overflow: hidden;
+        border-bottom: 3px solid #fff;
+        background-color: #000;
+    }
+        /*background image*/
+        .second-section-img img{
+            max-height: 599px;
+            width: 100%;
+        }
+        /*articles wrapper*/
+        .second-wrapper{
+            position: absolute;
+            top: 0;
+            text-align: center;
+            height: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: rgba(0,0,0,.8);
+        }
+            .second-section article{
+                width: 20%;
+                min-width: 350px;
+                margin-right: 10px;
+                display: inline-block;
+                border: 2px solid #fff;
+                padding-bottom: 20px;
+                overflow: hidden;
+                background-color: #fff;
+                cursor: pointer;
+            }
+                .second-section article:hover{
+                    -webkit-box-shadow: 0px 1px 16px 6px rgba(117,117,117,1);
+                    -moz-box-shadow: 0px 1px 16px 6px rgba(117,117,117,1);
+                    box-shadow: 0px 1px 16px 6px rgba(117,117,117,1);
+                }
+                /*така се отбелязва последният елемент от този тип, който се намира в този section, целта е да махнем само на него margin-right*/
+                .second-section article:last-of-type{
+                    margin-right: 0;
+                }
+                /*header*/
+                .second-section article header{
+                    max-height: 205px;
+                    overflow: hidden;
+                }
+                    .second-section header img{
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                    }
+                /*text*/
+                .second-section article p{
+                    padding: 40px 30px;
+                    text-align: center;
+                }
+                /*link of article*/
+                .second-section a{
+                    display: block;
+                    margin: auto;
+                    width: 70%;
+                    padding: 10px 40px;
+                    color: #fff;
+                    text-decoration: none;
+                    background-color: #e2b55d;
+                    text-align: center;
+                }
+        /*hover article*/
+
+    /*third section with information and lists*/
+	.third-section{
+		display: flex;
+	}
+		
+    .third-section article{
+        float: left;
+        width: 64%;
+        position: relative;
+        overflow: hidden;
+    }
+        /*добавяме transition property за да може да накараме този ефект на размазване на снимката да стане плавно, това се указва със 0,5 секунди*/
+        .blured-image{
+            cursor: pointer;
+			height: 100%;
+            transition: 1s filter linear;
+            -webkit-transition: 0.5s -webkit-filter linear;
+            -moz-transition: 0.5s -moz-filter linear;
+            -ms-transition: 0.5s -ms-filter linear;
+            -o-transition: 0.5s -o-filter linear;
+        }
+            .blured-image img{
+                width: 100%;
+				height: 100%;
+            }
+        /*container of text over image*/
+        .hidden-content{
+            position: absolute;
+            width: 50%;
+            top: 30px;
+            margin-left: 25%;
+            background-color: rgba(0,0,0,.6);
+            border: 1px solid #fff;
+            color: #fff;
+            text-align: center;
+            padding: 33px 20px;
+            webkit-box-shadow: -1px 4px 120px 7px rgba(255,255,255,1);
+            -moz-box-shadow: -1px 4px 120px 7px rgba(255,255,255,1);
+            box-shadow: -1px 4px 120px 7px rgba(255,255,255,1);
+        }
+            /*header*/
+            .hidden-content h1{
+                padding-bottom: 10px;
+            }
+            .hidden-content p{
+                line-height: 1.3;
+            }
+    /*hover efects*/
+    .third-section article:hover .blured-image{
+        filter: blur(15px);
+    }
+    /*aside in third section*/
+    .aside-section{
+        display: block;
+        width: 36%;
+        min-height: 100%;
+        float: right;
+        padding-top: 20px;
+    }
+        .aside-section ul{
+            list-style-type: none;
+        }
+             .aside-section ul li{
+                 text-align: center;
+             }
+                .aside-section ul li a{
+                    display: block;
+                    padding: 20px;
+                    width: 64%;
+                    margin: auto;
+                    color: #e2b55d;
+                    font-size: 20px;
+                }
+                    .aside-section li hr{
+                        width: 22%;
+                        margin: auto;
+		
+                    }
+	
+	/* footer */
+	.footer{
+		padding: 20px 108px;
+		background-color: #e9bb60;
+		border-top: 2px solid #fff;
+	}
+		.footer table{
+			width: 100%;
+		}
